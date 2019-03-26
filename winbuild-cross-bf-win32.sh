@@ -2,7 +2,8 @@
 
 CURL_PREFIX=/mingw32
 SSL_PREFIX=/usr/local
-RELEASE=cpuminer-opt-v3.8.10-bf-win32
+RELEASE=cpuminer-opt-v3.8.11-bf-win32
+MAKEOPT="-j4"
 
 # gcc 4.4
 extracflags="-D_REENTRANT -fmerge-all-constants -funroll-loops -fomit-frame-pointer" # -fvariable-expansion-in-unroller -fbranch-target-load-optimize2 -fsched2-use-superblocks -falign-loops=16 -falign-functions=16 -falign-jumps=16 -falign-labels=16"
@@ -34,7 +35,7 @@ cp /usr/local/bin/libssl-1_1.dll $RELEASE/
 make clean || echo clean
 rm -f config.status
 CFLAGS="-O3 -msse2 -Wall $extracflags" ./configure $F
-make
+make $MAKEOPT
 strip -s cpuminer.exe
 mv cpuminer.exe $RELEASE/cpuminer-sse2.exe
 make clean || echo clean

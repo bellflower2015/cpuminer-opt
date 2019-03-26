@@ -236,6 +236,7 @@ bool register_algo_gate( int algo, algo_gate_t *gate )
      case ALGO_YESCRYPTR32:  register_yescryptr32_algo  ( gate ); break;
      case ALGO_YESPOWER:     register_yespower_algo     ( gate ); break;
      case ALGO_YESPOWERR8:   register_yespowerr8_algo   ( gate ); break;
+     case ALGO_YESPOWER05R16:register_yespower05r16_algo( gate ); break;
      case ALGO_YESPOWERR16:  register_yespowerr16_algo  ( gate ); break;
      case ALGO_YESPOWERR24:  register_yespowerr24_algo  ( gate ); break;
      case ALGO_YESPOWERR32:  register_yespowerr32_algo  ( gate ); break;

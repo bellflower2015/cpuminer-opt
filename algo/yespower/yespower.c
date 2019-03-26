@@ -33,6 +33,7 @@
 enum YespowerParamsType {
     YESPOWER_PARAMS_BELLCOIN,
     YESPOWER_PARAMS_BITZENY,
+    YESPOWER_PARAMS_OLDYENTEN,
     YESPOWER_PARAMS_YENTEN,
     YESPOWER_PARAMS_JAGARICOIN,
     YESPOWER_PARAMS_WAVI,
@@ -54,12 +55,19 @@ void yespower_hash( const char *input, char *output, uint32_t len )
             params.pers = "Client Key";
             params.perslen = 10;
             break;
-        case YESPOWER_PARAMS_YENTEN:
+        case YESPOWER_PARAMS_OLDYENTEN:
             params.version = YESPOWER_0_5;
             params.N = 4096;
             params.r = 16;
             params.pers = "Client Key";
             params.perslen = 10;
+            break;
+        case YESPOWER_PARAMS_YENTEN:
+            params.version = YESPOWER_1_0;
+            params.N = 4096;
+            params.r = 16;
+            params.pers = NULL;
+            params.perslen = 0;
             break;
         case YESPOWER_PARAMS_JAGARICOIN:
             params.version = YESPOWER_0_5;
@@ -132,6 +140,12 @@ bool register_yespower_algo( algo_gate_t* gate )
 bool register_yespowerr8_algo( algo_gate_t* gate )
 {
     paramsType = YESPOWER_PARAMS_BITZENY;
+    return register_yespower_algo(gate);
+}
+
+bool register_yespower05r16_algo( algo_gate_t* gate )
+{
+    paramsType = YESPOWER_PARAMS_OLDYENTEN;
     return register_yespower_algo(gate);
 }
 

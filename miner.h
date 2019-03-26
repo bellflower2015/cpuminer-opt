@@ -563,6 +563,7 @@ enum algos {
         ALGO_YESCRYPTR32,
         ALGO_YESPOWER,
         ALGO_YESPOWERR8,
+        ALGO_YESPOWER05R16,
         ALGO_YESPOWERR16,
         ALGO_YESPOWERR24,
         ALGO_YESPOWERR32,
@@ -651,6 +652,7 @@ static const char* const algo_names[] = {
         "yescryptr32",
         "yespower",
         "yespowerr8",
+        "yespower05r16",
         "yespowerr16",
         "yespowerr24",
         "yespowerr32",
@@ -793,11 +795,12 @@ Options:\n\
                           xevan         Bitsend (BSD)\n\
                           yescrypt      Globlboost-Y (BSTY)\n\
                           yescryptr8    BitZeny (ZNY)\n\
-                          yescryptr16   Yenten (YTN)\n\
+                          yescryptr16   Old-Yenten (YTN)\n\
                           yescryptr24   JagaricoinR (JAGAR)\n\
                           yescryptr32   WAVI\n\
                           yespower      Bellcoin (BELL), Cryply (CRP)\n\
                           yespowerr8    BitZeny (ZNY)\n\
+                          yespower05r16 Old-Yenten (YTN)\n\
                           yespowerr16   Yenten (YTN)\n\
                           yespowerr24   JagaricoinR (JAGAR)\n\
                           yespowerr32   WAVI\n\

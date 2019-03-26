@@ -125,6 +125,7 @@ Supported Algorithms
                           yescryptr32   WAVI
                           yespower      Bellcoin (BELL), Cryply (CRP)
                           yespowerr8    BitZeny (ZNY)
+                          yespower05r16 Old-Yenten (YTN)
                           yespowerr16   Yenten (YTN)
                           yespowerr24   JagaricoinR (JAGAR)
                           yespowerr32   WAVI
