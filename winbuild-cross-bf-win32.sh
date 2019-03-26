@@ -32,10 +32,9 @@ cp /mingw32/bin/zlib1.dll $RELEASE/
 cp /usr/local/bin/libcrypto-1_1.dll $RELEASE/
 cp /usr/local/bin/libssl-1_1.dll $RELEASE/
 
-make clean || echo clean
+make distclean || echo clean
 rm -f config.status
 CFLAGS="-O3 -msse2 -Wall $extracflags" ./configure $F
 make $MAKEOPT
 strip -s cpuminer.exe
 mv cpuminer.exe $RELEASE/cpuminer-sse2.exe
-make clean || echo clean

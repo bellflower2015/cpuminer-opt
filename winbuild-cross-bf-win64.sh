@@ -31,15 +31,14 @@ cp /mingw64/bin/zlib1.dll $RELEASE/
 cp /usr/local/bin/libcrypto-1_1-x64.dll $RELEASE/
 cp /usr/local/bin/libssl-1_1-x64.dll $RELEASE/
 
-make clean || echo clean
+make distclean || echo clean
 rm -f config.status
 CFLAGS="-O3 -msse2 -Wall $extracflags" ./configure $F
 make $MAKEOPT
 strip -s cpuminer.exe
 mv cpuminer.exe $RELEASE/cpuminer-sse2.exe
-make clean || echo clean
 
-make distclean || echo clean
+make clean || echo clean
 rm -f config.status
 ./autogen.sh || echo done
 CFLAGS="-O3 -march=core-avx2 -msha -Wall $extracflags" ./configure $F
@@ -66,7 +65,6 @@ mv cpuminer.exe $RELEASE/cpuminer-avx2.exe
 #make $MAKEOPT
 #strip -s cpuminer.exe
 #mv cpuminer.exe $RELEASE/cpuminer-aes-sha.exe
-
 
 make clean || echo clean
 rm -f config.status
@@ -97,5 +95,3 @@ mv cpuminer.exe $RELEASE/cpuminer-aes-sse42.exe
 #make $MAKEOPT
 #strip -s cpuminer.exe
 #mv cpuminer.exe $RELEASE/cpuminer-ssse3.exe
-#make clean || echo clean
-
