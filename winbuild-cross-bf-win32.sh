@@ -2,7 +2,7 @@
 
 CURL_PREFIX=/mingw32
 SSL_PREFIX=/usr/local
-RELEASE=cpuminer-opt-v3.8.11-bf-win32
+RELEASE=cpuminer-opt-v3.8.12-bf-win32
 MAKEOPT="-j4"
 
 # gcc 4.4
